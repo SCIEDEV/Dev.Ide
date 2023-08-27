@@ -1,0 +1,15 @@
+﻿PRINT "HELLO WORLD"
+PRINT "HOW ARE YOU?"
+
+DECLARE a : INTEGER
+a <- INT(RAND(50))
+PRINT a & "\n"
+
+DECLARE Text : STRING
+FOR I <- 1 TO 5
+    Text <- ""
+    FOR J <- 1 TO I
+        Text <- Text & J & " "
+    NEXT
+    PRINT Text
+NEXT
