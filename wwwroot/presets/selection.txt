@@ -1,0 +1,30 @@
+﻿DECLARE msg : STRING
+FOR x <- 1 TO 10
+    IF x MOD 2 = 0 AND x MOD 3 = 0 THEN
+        msg <- "FizzBuzz"
+    ELSE IF x MOD 2 = 0 THEN
+        msg <- "Fizz"
+    ELSE IF x MOD 3 = 0 THEN
+        msg <- "Buzz"
+    ELSE
+        msg <- "None"
+    ENDIF
+    OUTPUT msg
+NEXT x
+
+a <- 1
+FOR y <- 1 TO 100
+    CASE OF y
+        1: PRINT 1
+        1 + 1: PRINT 2
+        4 - a: PRINT 3
+        a * 4: PRINT 4
+        5 TO 10 * a:
+        0.5 * 22:
+            DECLARE var : REAL
+            OUTPUT y, " ", var
+        10: PRINT 10
+        12 - 1 TO 95.0:
+        OTHERWISE: PRINT y 
+    ENDCASE
+NEXT y

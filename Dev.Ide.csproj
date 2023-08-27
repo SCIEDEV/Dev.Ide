@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+     <ServerGarbageCollection>true</ServerGarbageCollection>
+</PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Dev.Ide' " />
+    <Target Name="Tailwind" BeforeTargets="Build">
+	    <Exec Command="npm run input:build" />
+    </Target>
+
+  <ItemGroup>
+    <None Remove="Hubs\" />
+    <None Remove="Worker\" />
+    <None Remove="Pseudo\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <None Remove="Temp\" />
+    <None Remove="Pseudo\PseudoEngine2" />
+    <None Remove="Pseudo\PseudoEngine2-CentOS" />
+    <None Remove="Views\Assembler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hubs\" />
+    <Folder Include="Worker\" />
+    <Folder Include="Pseudo\" />
+    <Folder Include="Temp\" />
+    <Folder Include="wwwroot\presets\" />
+    <Folder Include="Views\Assembler\" />
+    <Folder Include="wwwroot\assembly\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\presets\" />
+    <Content Remove="wwwroot\assembly\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pseudo\PseudoEngine2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pseudo\PseudoEngine2-CentOS">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

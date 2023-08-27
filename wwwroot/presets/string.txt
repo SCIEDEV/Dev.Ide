@@ -1,0 +1,19 @@
+﻿FUNCTION getName() RETURNS STRING
+    RETURN "ABC"
+ENDFUNCTION
+
+FUNCTION getChar(x : BOOLEAN) RETURNS CHAR
+    IF x THEN
+        RETURN '1'
+    ELSE
+        RETURN '0'
+    ENDIF
+ENDFUNCTION
+
+PRINT "Name ", getName()
+PRINT "True ", getChar(TRUE)
+PRINT "False ", getChar(FALSE)
+
+PRINT "Hello" & " " & "World"
+
+PRINT "53 * 24 = " & (53 * 24)
