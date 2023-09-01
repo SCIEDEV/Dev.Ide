@@ -11,7 +11,7 @@
     "Dev.Ide": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:10071",
+      "applicationUrl": "http://localhost:42948",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

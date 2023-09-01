@@ -57,7 +57,7 @@ namespace Dev.Ide.Pseudo
                 var fileName = $"/Buffer/{run.connectionId}.pseudo";
                 await File.WriteAllTextAsync(filePath, run.code);
 
-                string enginePath = "/Pseudo/PseudoEngine2";
+                string enginePath = "/Pseudo/PseudoEngine2-macOS";
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     enginePath = "/Pseudo/PseudoEngine2-CentOS";
@@ -74,7 +74,7 @@ namespace Dev.Ide.Pseudo
                     RedirectStandardInput = true,
                     RedirectStandardError = true,
                     CreateNoWindow = true, // if this is a terminal app, don't show it
-                    WindowStyle = ProcessWindowStyle.Hidden // if this is a terminal app, don't show it
+                    WindowStyle = ProcessWindowStyle.Hidden, // if this is a terminal app, don't show it,
                 };
 
                 p = new Process();
@@ -109,14 +109,20 @@ namespace Dev.Ide.Pseudo
                     await Task.Delay(100);
                 }*/
 
-                p.WaitForExit();
+                p.WaitForExit(1000 * 120);
+                p.Close();
+                p.Dispose();
                 // display what the process output
+
+                Console.WriteLine("ECOMPLETE EXECUTION");
             }
             catch(Exception ex)
             {
                 errors.Add(ex.ToString());
                 errors.Add("INTERNAL EXCEPTION, PLEASE CONTACT MAINTAINER");
-                p.WaitForExit();
+                p.WaitForExit(1000 * 120);
+                p.Close();
+                p.Dispose();
             }
         }
 
