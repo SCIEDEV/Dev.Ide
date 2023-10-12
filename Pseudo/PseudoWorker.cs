@@ -8,7 +8,7 @@ using Dev.Ide.Models;
 
 namespace Dev.Ide.Pseudo
 {
-	public class PseudoWorker
+	public class PseudoWorker : IDisposable
 	{
         public List<string> outputs = new List<string>();
         public List<string> errors = new List<string>();
@@ -18,8 +18,15 @@ namespace Dev.Ide.Pseudo
         RunCode run;
         public PseudoWorker(RunCode _run)
 		{
+            AutoSelfDestruct();
             run = _run;
             Init();
+        }
+
+        public async void AutoSelfDestruct()
+        {
+            await Task.Delay(1000 * 60 * 10);
+            Dispose();
         }
 
         public async void Init()
@@ -129,6 +136,11 @@ namespace Dev.Ide.Pseudo
         public void Input(string input)
         {
             p.StandardInput.WriteLine(input);
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
