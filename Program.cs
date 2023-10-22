@@ -3,8 +3,11 @@ using System.Reflection;
 using Dev.Ide.Hubs;
 using Microsoft.Extensions.DependencyInjection;
 using Dev.Ide.Worker;
+using static System.Net.WebRequestMethods;
 
 Directory.CreateDirectory(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/Buffer");
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddSignalR();
 builder.Services.AddHostedService<DbHostedService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("https://oj.tech4good.tech/",
+                "https://oj-api.tech4good.tech/").AllowAnyHeader().AllowAnyMethod().WithMethods("GET", "POST")
+                .AllowCredentials().SetIsOriginAllowed(_ => true);
+        });
+});
 
 if (builder.Environment.IsDevelopment())
 {
@@ -40,6 +54,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
