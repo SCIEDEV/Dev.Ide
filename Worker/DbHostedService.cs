@@ -30,7 +30,7 @@ namespace Dev.Ide.Worker
                 "Consume Scoped Service Hosted Service is starting.");
 
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
-                TimeSpan.FromMilliseconds(100));
+                TimeSpan.FromMilliseconds(50));
 
             return Task.CompletedTask;
         }
@@ -91,7 +91,7 @@ namespace Dev.Ide.Worker
                         }
                     }
 
-                    var rootPath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                    var rootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
                     foreach (var t in toTerminate)
                     {
                         await hub.Clients.Client(t).SendAsync("Complete");

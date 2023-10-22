@@ -117,7 +117,17 @@ namespace Dev.Ide.Pseudo
                 }*/
 
                 p.WaitForExit(1000 * 120);
+
+                await Task.Delay(100);
+
+                while(outputs.Count > 0 || errors.Count > 0)
+                {
+                    await Task.Delay(50);
+                }
+
                 p.Close();
+
+
                 p.Dispose();
                 // display what the process output
 
@@ -140,7 +150,7 @@ namespace Dev.Ide.Pseudo
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+
         }
     }
 }
