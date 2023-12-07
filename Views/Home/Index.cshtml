@@ -163,7 +163,17 @@
         term.write('\u001b[31m' + "Connection to server is lost" + '\r\n')
         term.write('\u001b[31m' + "Check if you have working internet, and refresh the page." + '\r\n')
         term.write('\u001b[0m')
+        connection.start().then(function () {
+            document.getElementById('status').innerText = "RUN";
+            document.getElementById('status').classList.remove("loading");
+            document.getElementById("status").classList.remove("btn-disabled");
+            term.write('\033[32m' + "Reconnected! " + '\r\n')
+            term.write('\u001b[0m')
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
     })
+
 
     connection.start().then(function () {
         document.getElementById('status').innerText = "RUN";
