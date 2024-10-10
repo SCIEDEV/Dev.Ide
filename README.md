@@ -1,15 +1,4 @@
-# 🚀 Welcome to your new awesome project!
+# Dev.Ide
+Online pseudocode compiler made with ASP.NET Blazor.
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+WIP WASM support.
