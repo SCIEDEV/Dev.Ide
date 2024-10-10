@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -22,6 +22,167 @@
     <None Remove="Temp\" />
     <None Remove="Pseudo\PseudoEngine2-CentOS" />
     <None Remove="Views\Assembler\" />
+    <None Remove="Publish\refs\System.Runtime.Intrinsics.dll" />
+    <None Remove="Publish\refs\System.IO.dll" />
+    <None Remove="Publish\refs\System.Dynamic.Runtime.dll" />
+    <None Remove="Publish\refs\System.Security.Principal.dll" />
+    <None Remove="Publish\refs\System.Reflection.dll" />
+    <None Remove="Publish\refs\System.Net.dll" />
+    <None Remove="Publish\refs\System.IO.Compression.FileSystem.dll" />
+    <None Remove="Publish\refs\System.Runtime.CompilerServices.VisualC.dll" />
+    <None Remove="Publish\refs\System.IO.UnmanagedMemoryStream.dll" />
+    <None Remove="Publish\refs\System.IO.FileSystem.AccessControl.dll" />
+    <None Remove="Publish\refs\System.Net.Http.dll" />
+    <None Remove="Publish\refs\System.Net.NetworkInformation.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Xml.dll" />
+    <None Remove="Publish\refs\System.IO.FileSystem.DriveInfo.dll" />
+    <None Remove="Publish\refs\System.IO.Compression.Brotli.dll" />
+    <None Remove="Publish\refs\System.IO.Pipes.AccessControl.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.X509Certificates.dll" />
+    <None Remove="Publish\refs\System.IO.FileSystem.Watcher.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.TraceSource.dll" />
+    <None Remove="Publish\refs\System.Reflection.Emit.Lightweight.dll" />
+    <None Remove="Publish\refs\System.Linq.Expressions.dll" />
+    <None Remove="Publish\refs\System.Runtime.InteropServices.dll" />
+    <None Remove="Publish\refs\System.IO.Pipes.dll" />
+    <None Remove="Publish\refs\System.Net.HttpListener.dll" />
+    <None Remove="Publish\refs\System.Formats.Tar.dll" />
+    <None Remove="Publish\refs\System.IO.Compression.dll" />
+    <None Remove="Publish\refs\System.Net.Quic.dll" />
+    <None Remove="Publish\refs\System.Threading.Overlapped.dll" />
+    <None Remove="Publish\refs\System.Runtime.Handles.dll" />
+    <None Remove="Publish\refs\System.ObjectModel.dll" />
+    <None Remove="Publish\refs\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Remove="Publish\refs\System.Net.Mail.dll" />
+    <None Remove="Publish\refs\System.Linq.Parallel.dll" />
+    <None Remove="Publish\refs\System.Runtime.InteropServices.JavaScript.dll" />
+    <None Remove="Publish\refs\System.IO.FileSystem.Primitives.dll" />
+    <None Remove="Publish\refs\System.Net.Http.Json.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Primitives.dll" />
+    <None Remove="Publish\refs\System.IO.Compression.ZipFile.dll" />
+    <None Remove="Publish\refs\System.Linq.Queryable.dll" />
+    <None Remove="Publish\refs\System.Resources.ResourceManager.dll" />
+    <None Remove="Publish\refs\System.Reflection.Emit.ILGeneration.dll" />
+    <None Remove="Publish\refs\System.Net.NameResolution.dll" />
+    <None Remove="Publish\refs\System.Threading.RateLimiting.dll" />
+    <None Remove="Publish\refs\System.Runtime.Loader.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.Tracing.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Csp.dll" />
+    <None Remove="Publish\refs\System.Threading.Tasks.Dataflow.dll" />
+    <None Remove="Publish\refs\System.IO.Pipelines.dll" />
+    <None Remove="Publish\refs\System.IO.MemoryMappedFiles.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.OpenSsl.dll" />
+    <None Remove="Publish\refs\System.Runtime.CompilerServices.Unsafe.dll" />
+    <None Remove="Publish\refs\System.Globalization.dll" />
+    <None Remove="Publish\refs\System.Runtime.dll" />
+    <None Remove="Publish\refs\System.Net.ServicePoint.dll" />
+    <None Remove="Publish\refs\System.Reflection.Extensions.dll" />
+    <None Remove="Publish\refs\System.Globalization.Extensions.dll" />
+    <None Remove="Publish\refs\System.Runtime.Extensions.dll" />
+    <None Remove="Publish\refs\System.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Encoding.dll" />
+    <None Remove="Publish\refs\System.IO.IsolatedStorage.dll" />
+    <None Remove="Publish\refs\System.Reflection.TypeExtensions.dll" />
+    <None Remove="Publish\refs\System.Globalization.Calendars.dll" />
+    <None Remove="Publish\refs\System.Net.Requests.dll" />
+    <None Remove="Publish\refs\System.Reflection.Emit.dll" />
+    <None Remove="Publish\refs\System.IO.FileSystem.dll" />
+    <None Remove="Publish\refs\System.Linq.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.Process.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.Tools.dll" />
+    <None Remove="Publish\refs\System.Drawing.Primitives.dll" />
+    <None Remove="Publish\refs\System.Drawing.dll" />
+    <None Remove="Publish\refs\System.Net.Ping.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.StackTrace.dll" />
+    <None Remove="Publish\refs\System.Security.dll" />
+    <None Remove="Publish\refs\System.Formats.Asn1.dll" />
+    <None Remove="Publish\refs\System.Memory.dll" />
+    <None Remove="Publish\refs\System.Net.Primitives.dll" />
+    <None Remove="Publish\refs\System.Threading.Channels.dll" />
+    <None Remove="Pseudo\PseudoEngine2-v0.5.1-linux" />
+    <None Remove="Publish\refs\System.Web.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.Contracts.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.FileVersionInfo.dll" />
+    <None Remove="Publish\refs\System.Net.WebSockets.Client.dll" />
+    <None Remove="Publish\refs\System.Runtime.Serialization.Xml.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Localization.dll" />
+    <None Remove="Publish\refs\System.Reflection.Metadata.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.ObjectPool.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Cng.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.EventBasedAsync.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.DiagnosticSource.dll" />
+    <None Remove="Publish\refs\System.Threading.dll" />
+    <None Remove="Publish\refs\netstandard.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Identity.Core.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Hosting.Abstractions.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.dll" />
+    <None Remove="Publish\refs\System.Configuration.dll" />
+    <None Remove="Publish\refs\System.Resources.Writer.dll" />
+    <None Remove="Publish\refs\System.Console.dll" />
+    <None Remove="Publish\refs\System.Web.HttpUtility.dll" />
+    <None Remove="Publish\refs\System.Text.Encoding.Extensions.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.EventSource.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <None Remove="Publish\refs\System.Security.Claims.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.Primitives.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Identity.Stores.dll" />
+    <None Remove="Publish\refs\System.Reflection.Primitives.dll" />
+    <None Remove="Publish\refs\System.Runtime.Numerics.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.Configuration.dll" />
+    <None Remove="Publish\refs\System.Text.RegularExpressions.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.EventLog.dll" />
+    <None Remove="Publish\refs\System.Data.DataSetExtensions.dll" />
+    <None Remove="Publish\refs\System.Collections.NonGeneric.dll" />
+    <None Remove="Publish\refs\System.Collections.Concurrent.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <None Remove="Publish\refs\System.Text.Encodings.Web.dll" />
+    <None Remove="Publish\refs\System.Net.WebProxy.dll" />
+    <None Remove="Publish\refs\System.Text.Json.dll" />
+    <None Remove="Publish\refs\System.Net.WebHeaderCollection.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.TypeConverter.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.Annotations.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Localization.Abstractions.dll" />
+    <None Remove="Publish\refs\mscorlib.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Hosting.dll" />
+    <None Remove="Publish\refs\System.Windows.dll" />
+    <None Remove="Publish\refs\System.Resources.Reader.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Options.dll" />
+    <None Remove="Publish\refs\System.Collections.dll" />
+    <None Remove="Publish\refs\System.Data.Common.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.dll" />
+    <None Remove="Publish\refs\System.Xml.ReaderWriter.dll" />
+    <None Remove="Publish\refs\System.AppContext.dll" />
+    <None Remove="Publish\refs\System.Buffers.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.TextWriterTraceListener.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.FileProviders.Composite.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.dll" />
+    <None Remove="Publish\refs\System.Text.Encoding.dll" />
+    <None Remove="Publish\refs\Microsoft.Win32.Registry.dll" />
+    <None Remove="Publish\refs\System.Collections.Specialized.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <None Remove="Publish\refs\System.ValueTuple.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Features.dll" />
+    <None Remove="Publish\refs\System.Data.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Http.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.Console.dll" />
+    <None Remove="Publish\refs\System.Security.AccessControl.dll" />
+    <None Remove="Publish\refs\System.Net.WebSockets.dll" />
+    <None Remove="Publish\refs\System.Runtime.Serialization.Json.dll" />
+    <None Remove="Publish\refs\System.Security.Cryptography.Algorithms.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <None Remove="Publish\refs\System.Numerics.Vectors.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.EventLog.dll" />
+    <None Remove="Publish\refs\System.Numerics.dll" />
+    <None Remove="Publish\refs\System.Collections.Immutable.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.Debug.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.Logging.TraceSource.dll" />
+    <None Remove="Publish\refs\System.Diagnostics.Debug.dll" />
+    <None Remove="Publish\refs\System.Runtime.Serialization.Primitives.dll" />
+    <None Remove="Publish\refs\Microsoft.Extensions.FileProviders.Embedded.dll" />
+    <None Remove="Publish\refs\System.Reflection.DispatchProxy.dll" />
+    <None Remove="Publish\refs\System.Net.WebClient.dll" />
+    <None Remove="Publish\refs\System.ComponentModel.DataAnnotations.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Hubs\" />
@@ -33,11 +194,19 @@
     <Folder Include="wwwroot\assembly\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\presets\" />
     <Content Remove="wwwroot\assembly\" />
+    <Content Remove="Publish\appsettings.json" />
+    <Content Remove="Publish\Dev.Ide.runtimeconfig.json" />
+    <Content Remove="Publish\package-lock.json" />
+    <Content Remove="Publish\package.json" />
+    <Content Remove="Publish\appsettings.Development.json" />
+    <Content Remove="Publish\Dev.Ide.deps.json" />
+    <Content Remove="Publish\libman.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pseudo\PseudoEngine2-macOS">
@@ -45,6 +214,9 @@
     </Content>
     <Content Include="Pseudo\PseudoEngine2-CentOS">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pseudo\PseudoEngine2-v0.5.1-linux">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 </Project>

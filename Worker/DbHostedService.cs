@@ -63,6 +63,8 @@ namespace Dev.Ide.Worker
                     var hub = scope.ServiceProvider.GetRequiredService<IHubContext<TerminalHub>>();
 
                     List<string> toTerminate = new List<string>();
+                    
+                    //_logger.LogInformation(PsuedoEngine.workers.Count().ToString());
 
                     foreach (var w in PsuedoEngine.workers)
                     {

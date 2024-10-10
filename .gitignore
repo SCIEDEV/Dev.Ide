@@ -9,3 +9,7 @@ PseudoEngine2-v0.1-linux
 wwwroot/css/output.css
 Publish
 .vs
+service.txt
+publish.py
+.idea
+publish.sig

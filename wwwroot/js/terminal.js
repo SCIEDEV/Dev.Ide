@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿/*"use strict";
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/terminalHub").build();
 
@@ -27,4 +27,4 @@ document.getElementById("sendButton").addEventListener("click", function (event)
         return console.error(err.toString());
     });
     event.preventDefault();
-});
+});*/

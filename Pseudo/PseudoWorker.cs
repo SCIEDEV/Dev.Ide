@@ -18,23 +18,18 @@ namespace Dev.Ide.Pseudo
         RunCode run;
         public PseudoWorker(RunCode _run)
 		{
-            AutoSelfDestruct();
             run = _run;
             Init();
         }
 
-        public async void AutoSelfDestruct()
-        {
-            await Task.Delay(1000 * 60 * 10);
-            Dispose();
-        }
+        private int timeoutSeconds = 120;
 
         public async void Init()
         {
             try
             {
                 var task = Run();
-                if (await Task.WhenAny(task, Task.Delay(120 * 1000)) == task)
+                if (await Task.WhenAny(task, Task.Delay(timeoutSeconds * 1000)) == task)
                 {
                     terminate = true;
                 }
@@ -43,7 +38,7 @@ namespace Dev.Ide.Pseudo
                     errors.Add("TIMEOUT AFTER 60 SECONDS");
                     terminate = true;
                 }
-
+                
                 p.Close();
                 p.Dispose();
             }
@@ -55,6 +50,7 @@ namespace Dev.Ide.Pseudo
             }
         }
 
+        private bool canBeginInput = false;
 
 		public async Task Run()
 		{
@@ -62,12 +58,20 @@ namespace Dev.Ide.Pseudo
             {
                 var filePath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + $"/Buffer/{run.connectionId}.pseudo";
                 var fileName = $"/Buffer/{run.connectionId}.pseudo";
+                
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
+                run.code = run.code.Replace("OPENFILE", "");
+                
                 await File.WriteAllTextAsync(filePath, run.code);
 
                 string enginePath = "/Pseudo/PseudoEngine2-macOS";
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-                    enginePath = "/Pseudo/PseudoEngine2-CentOS";
+                    enginePath = "/Pseudo/PseudoEngine2-v0.5.1-linux";
                 }
 
                 //enginePath = "/Pseudo/PseudoEngine2-v0.1-linux";
@@ -111,6 +115,16 @@ namespace Dev.Ide.Pseudo
                 p.BeginErrorReadLine();
                 p.BeginOutputReadLine();
 
+                await Task.Delay(100);
+
+                canBeginInput = true;
+
+                foreach(var input in toInputQueue)
+                {
+                    p.StandardInput.WriteLine(input.Replace("OPENFILE", ""));
+                    await Task.Delay(50);
+                }
+
                 /*while (!p.HasExited)
                 {
                     await Task.Delay(100);
@@ -143,9 +157,18 @@ namespace Dev.Ide.Pseudo
             }
         }
 
+        private List<string> toInputQueue = new List<string>();
+
         public void Input(string input)
         {
-            p.StandardInput.WriteLine(input);
+            if(!canBeginInput)
+            {
+                toInputQueue.Add(input);
+            }
+            else
+            {
+                p.StandardInput.WriteLine(input);
+            }
         }
 
         public void Dispose()

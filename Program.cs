@@ -22,6 +22,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins("https://oj.tech4good.tech/",
+                "https://code.sciedev.com",
                 "https://oj-api.tech4good.tech/").AllowAnyHeader().AllowAnyMethod().WithMethods("GET", "POST")
                 .AllowCredentials().SetIsOriginAllowed(_ => true);
         });
